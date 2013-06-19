@@ -46,6 +46,14 @@ public:
   virtual unsigned int capacity() const;
   virtual void assign(int size, double value) ;
   virtual ColumnVector vectorAdd(const MyColumnVector& v2) const;
+
+  using EigenColumnVector::operator ==;
+  using EigenColumnVector::operator =;
+  using EigenColumnVector::operator +=;
+  using EigenColumnVector::operator -=;
+  using EigenColumnVector::operator +;
+  using EigenColumnVector::operator -;
+
   virtual ColumnVector& operator =(const MyColumnVector& a);
   virtual ColumnVector& operator =(double a);
 
@@ -120,6 +128,13 @@ class RowVector : public EigenRowVector, public RowVector_Wrapper
   virtual unsigned int capacity() const;
   virtual RowVector& operator =(double a);
   virtual RowVector& operator =(const MyRowVector& a);
+
+  using EigenRowVector::operator ==;
+  using EigenRowVector::operator =;
+  using EigenRowVector::operator +=;
+  using EigenRowVector::operator -=;
+  using EigenRowVector::operator +;
+  using EigenRowVector::operator -;
 
   virtual MyRowVector & operator+= (const MyRowVector& a);
   virtual MyRowVector & operator-= (const MyRowVector& a);

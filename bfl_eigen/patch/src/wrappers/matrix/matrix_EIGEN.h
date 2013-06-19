@@ -46,6 +46,13 @@ class Matrix : public EigenMatrix, public Matrix_Wrapper
   virtual double operator()(unsigned int,unsigned int) const;
   virtual RowVector operator[](unsigned int)const;
 
+  using EigenMatrix::operator ==;
+  using EigenMatrix::operator =;
+  using EigenMatrix::operator +=;
+  using EigenMatrix::operator -=;
+  using EigenMatrix::operator +;
+  using EigenMatrix::operator -;
+
   virtual bool operator==(const MyMatrix& a) const;
 
   virtual MyMatrix& operator =(double a);
@@ -111,6 +118,14 @@ class SymmetricMatrix : public EigenSymmetricMatrix, public SymmetricMatrix_Wrap
   virtual double& operator()(unsigned int,unsigned int);
   virtual double operator()(unsigned int,unsigned int) const;
   virtual RowVector operator[](unsigned int)const;
+
+  using EigenSymmetricMatrix::operator ==;
+  using EigenSymmetricMatrix::operator =;
+  using EigenSymmetricMatrix::operator +=;
+  using EigenSymmetricMatrix::operator -=;
+  using EigenSymmetricMatrix::operator +;
+  using EigenSymmetricMatrix::operator -;
+
   virtual bool operator==(const MySymmetricMatrix& a) const;
 
   virtual MySymmetricMatrix& operator=(double a);
